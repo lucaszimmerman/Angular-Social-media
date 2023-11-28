@@ -1,0 +1,38 @@
+<div class="share">
+  <div class="container">
+    <div class="top">
+      <div class="left">
+      <img class="icon" [src]="'assets/upload/' + currentUser?.profilePic" alt="Foto de perfil">
+      <input type="text" [placeholder]="'Faça uma postagem ' + currentUser.name + '?' " [(ngModel)]="desc" />
+    </div>
+    <div class="right">
+      <ng-container *ngIf="filePreview">
+        <img class="file" alt="" [src]="filePreview" />
+      </ng-container>
+    </div>
+  </div>
+    <hr />
+    <div class="bottom">
+      <div class="left-bottom">
+        <input type="file" id="file" style="display: none" (change)="handleFileChange($event)"  />
+        <label for="file">
+          <div class="item">
+            <fa-icon id="imageIcon" [icon]="imageIcon"></fa-icon>
+            <span>Adicionar Imagem</span>
+          </div>
+        </label>
+        <div class="item">
+          <fa-icon id="locationIcon" [icon]="locationIcon"></fa-icon>
+          <span>Adicionar Localização</span>
+        </div>
+        <div class="item">
+          <fa-icon id="tagFriendIcon" [icon]="tagFriendIcon"></fa-icon>
+          <span>Marcar Amigos</span>
+        </div>
+      </div>
+      <div class="right-bottom">
+        <button (click)="handleClick($event)">Share</button>
+      </div>
+    </div>
+  </div>
+</div>

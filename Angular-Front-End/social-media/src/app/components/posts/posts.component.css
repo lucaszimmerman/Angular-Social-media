@@ -1,0 +1,17 @@
+.posts{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.error-message {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loading-message {
+  color: orange;
+  font-size: 18px;
+  font-weight: bold;
+}

@@ -1,0 +1,49 @@
+<div class="navbar">
+  <div class="left">
+    <a [routerLink]="['/']">
+    <span >Ecotech</span>
+    </a>
+    <fa-icon id="homeIcon" [icon]="homeIcon"></fa-icon>
+    <fa-icon id="modeIcon" [icon]="darkMode ? lightModeIcon : darkModeIcon"  (click)="toggleDarkMode()"></fa-icon>
+    <fa-icon id="faGrip" [icon]="faGrip"></fa-icon>
+    <div class="search">
+      <fa-icon id="searchIcon" [icon]="searchIcon"></fa-icon>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+  </div>
+  <div class="right">
+    <fa-icon id="userIcon" [icon]="userIcon"></fa-icon>
+    <fa-icon id="messagesIcon" [icon]="messagesIcon"></fa-icon>
+    <fa-icon id="notificationIcon" [icon]="notificationIcon"></fa-icon>
+    <div class="user" (mouseenter)="toggleSettingsOpen()">
+      <img [src]="'assets/upload/' + currentUser?.profilePic" alt="Foto de perfil">
+      <span [routerLink]="['/perfil', currentUser.id]">{{ currentUser.name }}</span>
+    </div>
+    <div class="settings" *ngIf="settingsOpen">
+      <div class="container">
+        <div class="settingsButton">
+          <img [src]="'assets/upload/' + currentUser?.profilePic" alt="Foto de perfil">
+          <span [routerLink]="['/perfil', currentUser.id]">{{ currentUser.name }}</span>
+        </div>
+        <div class="settingsButton">
+          <fa-icon [icon]="helpIcon"></fa-icon>
+          <span>Ajuda</span>
+        </div>
+        <div class="settingsButton">
+          <fa-icon [icon]="configIcon"></fa-icon>
+          <span>Configurações</span>
+        </div>
+        <div class="settingsButton">
+          <fa-icon [icon]="trashIcon"></fa-icon>
+          <span>Excluir Conta</span>
+        </div>
+        <div class="settingsButton" (click)="handleLogout($event)">
+          <fa-icon [icon]="exitIcon"></fa-icon>
+          <span>Sair</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

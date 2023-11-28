@@ -1,0 +1,33 @@
+<div class="update" *ngIf="openUpdate">
+  <div class="wrapper">
+  <h1>Atualize seu perfil</h1>
+  <form>
+    <div class="files">
+    <label htmlFor="cover">
+    <span>Foto de capa</span>
+    <div class="imgContainer">
+    <img [src]="'/assets/upload/' + user.coverPic" alt="Cover" />
+    <fa-icon class="icon" [icon]="cloudIcon" style="font-size: large;"></fa-icon>
+    </div>
+    </label>
+    <input type="file" name="cover" (change)="handleFileInput($event, 'cover')">
+    <label htmlFor="profile">
+    <span>Foto de perfil</span>
+    <div class="imgContainer">
+      <img [src]="'/assets/upload/' + user.profilePic" alt="Cover" />
+      <fa-icon class="icon" [icon]="cloudIcon" style="font-size: large;"></fa-icon>
+      </div>
+    </label>
+    <input type="file" name="profile" (change)="handleFileInput($event, 'profile')">
+    </div>
+    <label>Nome</label>
+    <input type="text" [(ngModel)]="user.name" (input)="handleChange($event, 'name')" name="name" [ngModelOptions]="{ standalone: true }">
+    <label>País/ Cidade</label>
+    <input type="text"  [(ngModel)]="user.city" (input)="handleChange($event, 'city')" name="city" [ngModelOptions]="{ standalone: true }">
+    <label>Website</label>
+    <input type="text"  [(ngModel)]="user.website" (input)="handleChange($event, 'website')" name="website" [ngModelOptions]="{ standalone: true }">
+    <button (click)="handleSubmit($event)">Atualizar</button>
+  </form>
+  <button class="close" (click)="openUpdateComponent()">Sair</button>
+</div>
+</div>

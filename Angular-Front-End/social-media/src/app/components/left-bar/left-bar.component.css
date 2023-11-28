@@ -1,0 +1,85 @@
+.leftbar{
+ flex: 2;
+ position: sticky;
+ top: 70px;
+ height: calc(100vh - 70px);
+ overflow: scroll;
+ background-color: var(--bg);
+ color: var(--textColor);
+}
+
+
+.leftbar::-webkit-scrollbar {
+  width: 8px; /* largura da barra de rolagem */
+}
+
+.leftbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* cor do polegar da barra de rolagem */
+  border-radius: 4px; /* borda do polegar da barra de rolagem */
+}
+
+.leftbar::-webkit-scrollbar-track {
+  background-color: transparent; /* cor do rastreador da barra de rolagem */
+}
+
+.container{
+padding: 20px;
+}
+
+hr{
+  margin: 20px 0px;
+  border: none;
+  height: 0.5px;
+  background-color: var(--border);
+}
+
+.menu{
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+
+
+.user{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.user img{
+width: 30px;
+height: 30px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.user span{
+  font-size: 16px;
+}
+
+.section{
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.item{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.item img{
+width: 30px;
+}
+
+.item span{
+  font-size: 16px;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 480px) {
+  .leftbar{
+    display: none;
+  }
+}
+

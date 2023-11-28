@@ -1,0 +1,20 @@
+<div class="login">
+  <div class="card">
+    <div class="left-card">
+      <h1>Seja bem vindo.</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit voluptas, voluptates voluptatibus nam ad incidunt corporis dolores explicabo laudantium ut doloribus consequuntur magni odio vitae. Quo eveniet saepe enim fuga?</p>
+      <span>Não possui uma conta?</span>
+      <button [routerLink]="['/cadastro']">Cadastre-se</button>
+    </div>
+    <div class="right-card">
+      <h1>Login</h1>
+      <form>
+        <input type="text" placeholder="Nome de Usuário" name="username" [(ngModel)]="inputs.username">
+        <input type="password" placeholder="Senha" name="password"[(ngModel)]="inputs.password">
+        <div *ngIf="err">{{ err }}</div>
+        <button (click)="handleLogin($event)">Login</button>
+      </form>
+    </div>
+  </div>
+
+</div>

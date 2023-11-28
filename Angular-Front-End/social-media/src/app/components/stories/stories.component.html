@@ -1,0 +1,14 @@
+<div class="stories">
+  <div class="story">
+    <img [src]="'assets/upload/' + currentUser.profilePic" alt="" />
+    <span>{{ currentUser.name }}</span>
+    <button>+</button>
+</div>
+    <ng-container *ngFor="let story of stories">
+        <div class="story">
+            <img [src]="story.img" alt="" />
+            <span>{{ story.name }}</span>
+        </div>
+    </ng-container>
+</div>
+

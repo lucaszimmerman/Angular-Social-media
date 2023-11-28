@@ -1,0 +1,77 @@
+.stories{
+display: flex;
+gap: 10px;
+height: 250px;
+margin-bottom: 30px;
+z-index: 999;
+}
+
+.story{
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.story img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story span{
+ position: absolute;
+ bottom: 10px;
+ left: 10px;
+ color: white;
+ font-weight: 500;
+}
+
+button {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  color: white;
+  background-color: #5271ff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 480px) {
+  .stories{
+    height: 50px;
+    justify-content: space-between;
+  }
+  .story{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .story span{
+    display: none;
+  }
+  button{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.stories{
+  height: 150px;
+  gap: 20px;
+
+}
+}

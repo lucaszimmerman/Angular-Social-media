@@ -1,0 +1,49 @@
+<div class="post">
+  <div class="container">
+  <div class="user">
+    <div class="userInfo">
+      <img [src]="'assets/upload/' + post?.profilePic" alt="Foto de perfil">
+      <div class="details">
+        <a [routerLink]="['/perfil', post.userId]">
+          <span class="name">{{ post.name }}</span>
+        </a>
+        <span class="date">{{ formatDateToNow(post.createdAt) }}</span>
+      </div>
+    </div>
+    <fa-icon  id="configIcon" [icon]="configIcon" (click)="toggleSettingsOpen()"></fa-icon>
+    <div class="settings" *ngIf="settingsOpen && canDelete">
+      <div class="settingsContainer">
+      <div class="settingsButton" (click)="handleDelete($event)">
+        <fa-icon [icon]="trashIcon"></fa-icon>
+          <span> Excluir Postagem</span>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="content">
+      <p>{{ post.desc }}</p>
+      <div *ngIf="post.img">
+      <img [src]="'assets/upload/' + post.img" alt="" />
+    </div>
+  </div>
+  <div class="info">
+    <div class="item" >
+      <fa-icon (click)="handleLike($event)" id="likeIcon" [icon]="liked ?likedIcon : likeIcon" [style.color]="liked ? 'red' : 'white'" ></fa-icon>
+      {{ likes.length }} Curtidas
+      <span *ngIf="isLoading">Carregando...</span>
+    </div>
+    <div class="item" (click)="toggleCommentOpen()">
+        <fa-icon id="commentIcon" [icon]="commentIcon" ></fa-icon>
+      {{ comments.length }} Comentários
+    </div>
+    <div class="item">
+      <fa-icon id="shareIcon" [icon]="shareIcon" ></fa-icon>
+      Compartilhar
+    </div>
+    </div>
+    <div *ngIf="commentOpen">
+      <app-comments [postId]="post.id"></app-comments>
+    </div>
+  </div>
+  </div>
+

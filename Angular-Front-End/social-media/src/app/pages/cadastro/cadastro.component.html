@@ -1,0 +1,44 @@
+<div class="cadastro">
+  <div class="card">
+    <div class="left-card">
+      <h1>Rede Social Sustentabilidade</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit voluptas, voluptates voluptatibus nam ad incidunt corporis dolores explicabo laudantium ut doloribus consequuntur magni odio vitae. Quo eveniet saepe enim fuga?</p>
+      <span>Já possui uma conta?</span>
+      <button [routerLink]="['/login']">Login</button>
+    </div>
+    <div class="right-card">
+      <h1>Cadastro</h1>
+      <form (submit)="register()">
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            [(ngModel)]="inputs.username"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            [(ngModel)]="inputs.email"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="inputs.password"
+          />
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            [(ngModel)]="inputs.name"
+          />
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+          <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+</div>

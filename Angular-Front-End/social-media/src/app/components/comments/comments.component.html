@@ -1,0 +1,39 @@
+<div class="comments">
+  <div class="write">
+    <img [src]="'assets/upload/' + currentUser?.profilePic" alt="Foto de perfil">
+    <input type="text" [placeholder]="'Escreva um Comentário ' + currentUser.name + '?' " [(ngModel)]="desc" />
+    <button (click)="handleClick($event)">Enviar</button>
+  </div>
+  <ng-container *ngIf="error; else commentsContent">
+    <div class="error-message">
+      Something went wrong!
+    </div>
+  </ng-container>
+  <ng-template #commentsContent>
+    <ng-container *ngIf="isLoading; else commentsList">
+      <div class="loading-message">
+        Loading...
+      </div>
+    </ng-container>
+    <ng-template #commentsList>
+      <ng-container *ngFor="let comment of comments">
+        <div class="comment" >
+          <img [src]="'assets/upload/' + comment.user.profilePic" alt="Foto de perfil">
+          <div class="info">
+            <span>{{ comment.user.name }}</span>
+            <p>{{ comment.desc }}</p>
+          </div>
+          <span class="date" *ngIf="comment.createdAt">{{ formatDateToNow(comment.createdAt) }}</span>
+          <fa-icon (mousedown)="toggleSettingsOpen(comment)" id="configIcon" [icon]="settingsIcon"></fa-icon>
+          <div class="settings" *ngIf="commentSettingsOpen[comment.id] && comment.canDelete">
+          <div class="container">
+          <div class="settingsButton" (mousedown)="handleDelete($event, comment.id)">
+          <fa-icon [icon]="trashIcon"></fa-icon>
+          <span> Excluir Comentário</span>
+        </div>
+        </div>
+        </div>
+</div>
+      </ng-container>
+    </ng-template>
+

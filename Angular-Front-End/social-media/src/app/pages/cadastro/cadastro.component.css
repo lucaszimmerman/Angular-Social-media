@@ -1,0 +1,104 @@
+.cadastro {
+  height: 100vh;
+  background-color: rgb(233, 252, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+  .card{
+   width:75%;
+   display: flex;
+   flex-direction: row-reverse;
+   background-color: white;
+   border-radius: 10px;
+   min-height: 500px;
+   overflow: hidden;
+  }
+
+  .left-card{
+    flex: 1;
+    background: linear-gradient(rgba(23, 133, 4, 0.5), rgba(7, 100, 38, 0.5)), url(https://www.imperiodosmetais.com.br/images/home/sustentabilidade.png) center;
+    background-size: cover;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+  }
+
+  .left-card h1{
+  font-size: 60px;
+  line-height: 80px;
+  }
+
+  .left-card p{
+  }
+
+  .left-card span{
+   font-size: 14px;
+  }
+
+  .left-card button{
+   width: 50%;
+   padding: 10px;
+   border-radius: 15px;
+   border-color: white;
+   background-color: white;
+   color: greenyellow;
+   font-weight: bold;
+   cursor: pointer;
+  }
+
+  .left-card button:hover {
+    background-color: greenyellow; /* alterando a cor de fundo ao passar o mouse */
+    color: white; /* alterando a cor do texto ao passar o mouse */
+    border-color: greenyellow; /* alterando a cor da borda ao passar o mouse */
+    transform: scale(1.1); /* aumentando ligeiramente o tamanho ao passar o mouse */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* adicionando uma sombra sutil ao passar o mouse */
+  }
+
+  .right-card{
+     flex: 1;
+     padding: 50px;
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+     justify-content: center;
+  }
+
+  .right-card h1{
+  color: #555;
+  }
+
+  .right-card form{
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+  }
+
+  .right-card form input{
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 10px;
+  }
+
+  .right-card form button{
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: white;
+    background-color: #8eef8e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .right-card form button:hover {
+      background-color: #6ca96c; /* mudando a cor de fundo ao passar o mouse */
+      color: white; /* alterando a cor do texto ao passar o mouse */
+      border-color: white; /* alterando a cor da borda ao passar o mouse */
+      transform: scale(1.1); /* aumentando ligeiramente o tamanho ao passar o mouse */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* adicionando uma sombra sutil ao passar o mouse */
+  }

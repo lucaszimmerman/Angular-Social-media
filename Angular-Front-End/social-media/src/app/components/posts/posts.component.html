@@ -1,0 +1,18 @@
+<div class="posts">
+  <ng-container *ngIf="error; else postsContent">
+    <div class="error-message">
+      Something went wrong!
+    </div>
+  </ng-container>
+  <ng-template #postsContent>
+    <ng-container *ngIf="isLoading; else postsList">
+      <div class="loading-message">
+        Loading...
+      </div>
+    </ng-container>
+    <ng-template #postsList>
+      <app-post *ngFor="let post of posts" [post]="post"  (postDeleted)="handlePostDeleted($event)"></app-post>
+    </ng-template>
+  </ng-template>
+</div>
+

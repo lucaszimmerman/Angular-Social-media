@@ -1,0 +1,60 @@
+<div [ngClass]="darkMode ? 'dark-mode' : 'light-mode'">
+  <app-nav-bar></app-nav-bar>
+
+<div class="container">
+<div class="profile">
+  <div class="images">
+    <img [src]="'assets/upload/' + user?.coverPic  || 'https://iconerecife.com.br/wp-content/plugins/uix-page-builder/uixpb_templates/images/UixPageBuilderTmpl/default-cover-6.jpg'" alt="" class="cover">
+    <img [src]="'assets/upload/' + user?.profilePic || 'https://www.pngitem.com/pimgs/m/22-223968_default-profile-picture-circle-hd-png-download.png'" alt="" class="profilePic">
+  </div>
+  <div class="profileContainer">
+     <div class="userInfo">
+      <div class="left">
+        <a href="http://facebook.com">
+          <fa-icon id="fbIcon" [icon]="fbIcon" style="font-size: large;"></fa-icon>
+        </a>
+        <a href="http://pinterest.com">
+          <fa-icon id="prIcon" [icon]="prIcon" style="font-size: large;"></fa-icon>
+        </a>
+        <a href="http://instagram.com">
+          <fa-icon id="igIcon" [icon]="igIcon" style="font-size: large;"></fa-icon>
+        </a>
+        <a href="http://twitter.com">
+          <fa-icon id="ttIcon" [icon]="ttIcon" style="font-size: large;"></fa-icon>
+        </a>
+        <a href="http://linkedin.com">
+          <fa-icon id="ldIcon" [icon]="ldIcon" style="font-size: large;"></fa-icon>
+        </a>
+      </div>
+      <div class="center">
+        <span> {{ user?.name }} </span>
+        <div class="info">
+          <div class="item">
+            <fa-icon id="locationIcon" [icon]="locationIcon"></fa-icon>
+            <span>{{user?.city}}</span>
+          </div>
+          <div class="item">
+            <fa-icon id="siteIcon" [icon]="siteIcon"></fa-icon>
+            <span>{{user?.website}}</span>
+          </div>
+        </div>
+        <button (click)="handleFollow($event)" *ngIf="currentUser && user && currentUser.id !== user.id">
+          {{ isFollowingCurrentUser() ? 'Following' : 'Follow' }}
+        </button>
+
+        <button (click)="openUpdateComponent()" *ngIf="currentUser && user && currentUser.id === user.id">Editar</button>
+      </div>
+      <div class="right">
+        <fa-icon id="messageIcon" [icon]="messageIcon"></fa-icon>
+        <fa-icon id="moreIcon" [icon]="moreIcon"></fa-icon>
+      </div>
+     </div>
+     <div class="posts">
+     <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    </div>
+  </div>
+  <app-update [user] = "user" [openUpdate]="openUpdate"></app-update>
+</div>
+<app-right-bar></app-right-bar>
+</div>
+</div>
