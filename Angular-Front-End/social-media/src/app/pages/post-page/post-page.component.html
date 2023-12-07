@@ -1,0 +1,15 @@
+<div [ngClass]="darkMode ? 'dark-mode' : 'light-mode'">
+  <app-nav-bar></app-nav-bar>
+
+
+  <div class="container">
+    <app-left-bar></app-left-bar>
+
+    <div class="post">
+    <app-post *ngIf="!isLoading" [post]="post" [postId]="postId" ></app-post>
+    </div>
+
+
+    <app-right-bar></app-right-bar>
+  </div>
+  </div>

@@ -32,13 +32,13 @@ export class LoginComponent {
         catchError((error) => {
           let errorMessage: string;
 
-        if (error?.status === 400) {
-          errorMessage = 'Wrong password or username';
-        } else if (error?.status === 500) {
-          errorMessage = 'Internal server error';
-        } else {
-          errorMessage = 'An unexpected error occurred';
-        }
+          if (error?.status === 400) {
+            errorMessage = 'Nome de usuário ou senha incorretos';
+          } else if (error?.status === 500) {
+            errorMessage = 'Erro interno do servidor';
+          } else {
+            errorMessage = 'Ocorreu um erro inesperado';
+          }
 
         this.err = errorMessage;
         throw error; // Re-throw para propagar o erro para subscribers subsequentes

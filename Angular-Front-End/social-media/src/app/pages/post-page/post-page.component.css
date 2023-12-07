@@ -1,0 +1,41 @@
+
+.light-mode{
+  --textColor: #000;
+  --bg: white;
+  --logo: darkgreen;
+  --bgSoft: #f6f3f3;
+  --textColorSoft: #555;
+  --border: lightgray;
+}
+
+.dark-mode {
+  --textColor: whitesmoke;
+  --bg: #222;
+  --logo: white;
+  --bgSoft: #333;
+  --textColorSoft: lightgray;
+  --border: #444;
+}
+
+.container {
+  display: flex;
+}
+
+.post{
+  flex: 6;
+  background-color: var(--bgSoft);
+  padding: 20px 70px;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 460px) {
+  .home {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .home {
+    padding: 20px;
+  }
+}

@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   ConflictException,
   Controller,
@@ -23,6 +24,16 @@ export class AuthController {
     @Res() res,
   ): Promise<any> {
     try {
+      // Verificar se algum dos parâmetros é vazio ou contém apenas espaços em branco
+      if (
+        !username.trim() ||
+        !email.trim() ||
+        !password.trim() ||
+        !name.trim()
+      ) {
+        throw new BadRequestException('Todos os campos são obrigatórios.')
+      }
+
       const result = await this.authService.register(
         username,
         email,
@@ -43,6 +54,8 @@ export class AuthController {
     } catch (error) {
       if (error instanceof ConflictException) {
         res.status(409).json({ error: 'User already exists' })
+      } else if (error instanceof BadRequestException) {
+        res.status(400).json({ error: 'Todos os campos são obrigatórios.' })
       } else {
         res.status(500).json({ error: 'Internal server error' })
       }

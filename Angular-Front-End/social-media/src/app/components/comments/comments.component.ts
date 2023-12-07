@@ -90,6 +90,9 @@ export class CommentsComponent {
   async handleClick(e: Event): Promise<void> {
     e.preventDefault();
     try {
+      if (!this.desc.trim()) {
+        throw new Error('O comentário não pode ser vazio. Insira uma descrição.');
+      }
       this.commentService.addComment(this.desc, this.currentUser.id, this.postId).subscribe(
         (data) => {
           this.desc = ''; // Limpa o campo de descrição

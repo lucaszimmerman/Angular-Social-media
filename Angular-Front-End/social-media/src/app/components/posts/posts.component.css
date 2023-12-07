@@ -1,7 +1,7 @@
 .posts{
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 48px;
 }
 
 .error-message {

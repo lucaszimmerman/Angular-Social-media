@@ -52,6 +52,24 @@ export class PostService {
     }))
   }
 
+  async getPost(id: number): Promise<any | undefined> {
+    const post = await this.postRepository.findOne({
+      where: { id: id },
+      relations: ['user'], // Se precisar de informações do usuário associado à postagem
+    })
+
+    if (!post) {
+      throw new NotFoundException(`Post with ID ${id} not found`)
+    }
+
+    return {
+      ...post,
+      userId: post.user.id,
+      name: post.user.name,
+      profilePic: post.user.profilePic,
+    }
+  }
+
   async addPost(desc: string, img: string, userId: number): Promise<void> {
     const user = await this.userRepository.findOne({ where: { id: userId } })
 

@@ -4,49 +4,64 @@
 <div class="container">
 <div class="profile">
   <div class="images">
+    <div class="capa">
     <img [src]="'assets/upload/' + user?.coverPic  || 'https://iconerecife.com.br/wp-content/plugins/uix-page-builder/uixpb_templates/images/UixPageBuilderTmpl/default-cover-6.jpg'" alt="" class="cover">
+  </div>
+  <div class="perf">
+    <div class="imagperf">
     <img [src]="'assets/upload/' + user?.profilePic || 'https://www.pngitem.com/pimgs/m/22-223968_default-profile-picture-circle-hd-png-download.png'" alt="" class="profilePic">
   </div>
+
+  <div class="profileBox">
+  <div class="nome">
+    <span class="nm">{{user.name}}</span>
+    <span class="arro">{{'@' + user.username}}</span>
+  </div>
+  <div class="followedit">
+  <button (click)="handleFollow($event)" *ngIf="currentUser && user && currentUser.id !== user.id">
+    {{ isFollowingCurrentUser() ? 'Seguindo' : 'Seguir' }}
+  </button>
+
+  <a (click)="openUpdateComponent()" *ngIf="currentUser && user && currentUser.id === user.id"><svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
+    <path d="M20.0846 5.3125C20.2666 5.31254 20.4412 5.38473 20.57 5.51325L24.4599 9.40313C24.5888 9.53205 24.6612 9.70689 24.6612 9.88919C24.6612 10.0715 24.5888 10.2463 24.4599 10.3753L11.8195 23.0143C11.7332 23.1005 11.6254 23.1622 11.5074 23.193L6.24387 24.568C6.12785 24.5983 6.00593 24.5977 5.89022 24.5662C5.77451 24.5348 5.66902 24.4737 5.58424 24.3889C5.49945 24.3041 5.43831 24.1986 5.40689 24.0829C5.37548 23.9672 5.37486 23.8453 5.40513 23.7292L6.78013 18.4658C6.81095 18.3477 6.87265 18.24 6.95887 18.1536L19.5979 5.51325C19.6618 5.44945 19.7378 5.39888 19.8213 5.36443C19.9048 5.32999 19.9943 5.31234 20.0846 5.3125ZM5.5 26.9688C5.2265 26.9688 4.96419 27.0774 4.7708 27.2708C4.5774 27.4642 4.46875 27.7265 4.46875 28C4.46875 28.2735 4.5774 28.5358 4.7708 28.7292C4.96419 28.9226 5.2265 29.0312 5.5 29.0312H26.125C26.3985 29.0312 26.6608 28.9226 26.8542 28.7292C27.0476 28.5358 27.1562 28.2735 27.1562 28C27.1562 27.7265 27.0476 27.4642 26.8542 27.2708C26.6608 27.0774 26.3985 26.9688 26.125 26.9688H5.5Z" fill="#4F4F4F"/>
+    </svg></a>
+</div>
+</div>
+</div>
+</div>
   <div class="profileContainer">
      <div class="userInfo">
-      <div class="left">
-        <a href="http://facebook.com">
-          <fa-icon id="fbIcon" [icon]="fbIcon" style="font-size: large;"></fa-icon>
-        </a>
-        <a href="http://pinterest.com">
-          <fa-icon id="prIcon" [icon]="prIcon" style="font-size: large;"></fa-icon>
-        </a>
-        <a href="http://instagram.com">
-          <fa-icon id="igIcon" [icon]="igIcon" style="font-size: large;"></fa-icon>
-        </a>
-        <a href="http://twitter.com">
-          <fa-icon id="ttIcon" [icon]="ttIcon" style="font-size: large;"></fa-icon>
-        </a>
-        <a href="http://linkedin.com">
-          <fa-icon id="ldIcon" [icon]="ldIcon" style="font-size: large;"></fa-icon>
-        </a>
+      <div class="high">
+        <span class="tit">Sobre você</span>
+        <span class="txt">Estudante de Análise e Desenvolvimento de Sistemas na FATEC Carapicuíba</span>
       </div>
-      <div class="center">
-        <span> {{ user?.name }} </span>
-        <div class="info">
-          <div class="item">
+      <div class="low">
+        <!-- <div class="info">
             <fa-icon id="locationIcon" [icon]="locationIcon"></fa-icon>
             <span>{{user?.city}}</span>
-          </div>
-          <div class="item">
             <fa-icon id="siteIcon" [icon]="siteIcon"></fa-icon>
             <span>{{user?.website}}</span>
-          </div>
-        </div>
-        <button (click)="handleFollow($event)" *ngIf="currentUser && user && currentUser.id !== user.id">
-          {{ isFollowingCurrentUser() ? 'Following' : 'Follow' }}
-        </button>
+        </div> -->
+        <span class="tit">Interesses em</span>
+            <div class="direito">
+              <div class="super">
+                <div class="block">
+                  <span class="int-text">Tecnologia</span>
+                </div>
+                <div class="block"><span class="int-text">Web</span></div>
+              </div>
+            </div>
+            <div class="direito">
+              <div class="super">
+                <div class="block">
+                  <span class="int-text">E-commerce</span>
+                </div>
+                <div class="block">
+                  <span class="int-text">Java</span>
+                </div>
+              </div>
+            </div>
 
-        <button (click)="openUpdateComponent()" *ngIf="currentUser && user && currentUser.id === user.id">Editar</button>
-      </div>
-      <div class="right">
-        <fa-icon id="messageIcon" [icon]="messageIcon"></fa-icon>
-        <fa-icon id="moreIcon" [icon]="moreIcon"></fa-icon>
       </div>
      </div>
      <div class="posts">

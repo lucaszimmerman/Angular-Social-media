@@ -23,7 +23,7 @@
 
 .home{
   flex: 6;
-  background-color: var(--bgSoft);
+  background-color: #F4F2EE;
   padding: 20px 70px;
   min-height: 100vh;
 }

@@ -16,11 +16,6 @@ import { UserService } from 'src/app/services/user.service/user.service';
 })
 // Exportando a classe ShareComponent
 export class ShareComponent {
-  // Definindo os ícones do Font Awesome para o componente de compartilhamento
-  locationIcon = faMap;
-  imageIcon = faImage;
-  tagFriendIcon = faTag;
-
   currentUser: any; // Variável para armazenar informações do usuário atual
   desc: string = '';
   file: File | null | string = null;
@@ -71,6 +66,11 @@ export class ShareComponent {
     try {
       let imgUrl = await this.upload(); // Agora imgUrl pode ser uma string vazia se não houver arquivo
       console.log('Image URL:', imgUrl);
+
+     // Verifique se a postagem está vazia (sem descrição e sem imagem)
+    if (!this.desc.trim() && !imgUrl.trim()) {
+      throw new Error('A postagem não pode ser vazia. Insira uma descrição ou uma imagem.');
+    }
 
 
       this.isLoading = true;

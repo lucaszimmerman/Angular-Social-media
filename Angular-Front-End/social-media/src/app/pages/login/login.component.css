@@ -1,103 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .login {
-height: 100vh;
-background-color: rgb(233, 252, 230);
-display: flex;
-align-items: center;
-justify-content: center;
-
-}
-
-.card{
- width:75%;
- display: flex;
- background-color: white;
- border-radius: 10px;
- min-height: 500px;
- overflow: hidden;
-}
-
-.left-card{
-  flex: 1;
-  background: linear-gradient(rgba(23, 133, 4, 0.5), rgba(7, 100, 38, 0.5)), url(https://media.istockphoto.com/id/1359659563/vector/planet-earth-with-leaves-in-a-circle-green-globe-environmental-social-governance.jpg?s=612x612&w=0&k=20&c=AyyUx4eRlEBaig3Va-aFLFuOGHBxXBNJ7SHQqTWBkYg=) center;
-  background-size: cover;
-  padding: 50px;
+  height: 100vh;
+  background: linear-gradient(89deg, #000 -38.33%, rgba(0, 0, 0, 0.00) 135.9%), url(https://s3-alpha-sig.figma.com/img/dfbb/2e94/457ddf242f02f403e646edd7c645b7a4?Expires=1702252800&Signature=Yj~ZwQlY9dzLTwESHpvxO3O8vFghxPrAn4Pr~d2clY1ZGndP8eMopnU-NvOl5HYOxSrAneTJ6c1MTLqZZOcR3lttBGKmqdvKEQ7qzQV1P8LUT2TvO7VvKa0sXs7cD366tnOatDflZdh1yjfsKKM5zzvvJr8OKfvc~9DvC6IQPFNi12H2haNUNtC5fTw17ZaEU1Z7h0hZqMfdwhZX9zjWL8cmAVX4SoVc44~s9F2vQeJg7tLm1Og9DdchqMa3DP7jahuigagBw4swns2YV6ZIqC1Q-ok5r4kg4mlRGUD7-2TAZSZySyXIEYVFZpjH6RBCoDwl4bzFrjg9eNKMJdwUSg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4) center;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: white;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  }
+
+  .card{
+    display: inline-flex;
+    padding: 48px;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 16px;
+    background: #FFF;
+    width: 447px;
+    height: 428px;
+   margin-left: 737px; /*VER QUAL É MELHOR NO PC DA FACULDADE */
+  }
+
+  .right-card{
+    flex: 1;
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -60px;
+    margin-left: -48px;
+ }
+
+ .right-card h1{
+  color: #282828;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 28.8px */
 }
 
-.left-card h1{
-font-size: 100px;
-line-height: 80px;
+.texto {
+  display: flex;
 }
 
-.left-card p{
+.texto a{
+  color: var(--02--Azul-secundrio, #025159);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  padding-left: 2px;
+  margin-top: 8px;
+  text-decoration:none;
 }
 
-.left-card span{
- font-size: 14px;
+.texto a:hover{
+  text-decoration:underline;
 }
 
-.left-card button{
- width: 50%;
- padding: 10px;
- border-radius: 15px;
- border-color: white;
- background-color: white;
- color: greenyellow;
- font-weight: bold;
- cursor: pointer;
-}
-
-.left-card button:hover {
-  background-color: greenyellow; /* alterando a cor de fundo ao passar o mouse */
-  color: white; /* alterando a cor do texto ao passar o mouse */
-  border-color: greenyellow; /* alterando a cor da borda ao passar o mouse */
-  transform: scale(1.1); /* aumentando ligeiramente o tamanho ao passar o mouse */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* adicionando uma sombra sutil ao passar o mouse */
-}
-
-.right-card{
-   flex: 1;
-   padding: 50px;
-   display: flex;
-   flex-direction: column;
-   gap: 50px;
-   justify-content: center;
-}
-
-.right-card h1{
-color: #555;
+.msg-cadastre{
+  color: var(--Gray-1, #333);
+  text-align: right;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 19.2px */
+  margin-top: 8px;
 }
 
 .right-card form{
-   display: flex;
-   flex-direction: column;
-   gap: 30px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
 }
 
-.right-card form input{
-border: none;
-border-bottom: 1px solid lightgray;
-padding: 20px 10px;
+.form input{
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  height: 17px;
+  width: 415px;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 0.75px solid var(--Gray-4, #BDBDBD);
 }
 
-.right-card form button{
-  width: 50%;
-  padding: 10px;
-  border-radius: 10px;
-  border-color: white;
-  background-color: #8eef8e;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+.button{
+  display: flex;
+  height: 46px;
+  width: 450px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--01--Azul-primria, #012E40);
+  color: rgba(246, 246, 246, 0.96);
+  border: 1px solid #fff;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 19.2px */
 }
 
-.right-card form button:hover {
-    background-color: #6ca96c; /* mudando a cor de fundo ao passar o mouse */
-    color: white; /* alterando a cor do texto ao passar o mouse */
-    border-color: white; /* alterando a cor da borda ao passar o mouse */
-    transform: scale(1.1); /* aumentando ligeiramente o tamanho ao passar o mouse */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* adicionando uma sombra sutil ao passar o mouse */
+.texto2 {
+  display: flex;
+  align-self: flex-end;
+}
+
+.texto2 a{
+  color: var(--02--Azul-secundrio, #025159);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin-top: 24px;
+  text-decoration:none;
+}
+
+.texto2 a:hover{
+  text-decoration:underline;
+}
+
+.line {
+  background: var(--Gray-4, #BDBDBD);
+  height: 0.5px;
+  width: 447px;
+  align-self: stretch;
+  padding-left: 2px;
+  margin-top: 32px;
+}
+
+.button2{
+  display: flex;
+  height: 40px;
+  width: 450px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 8px;
+  background: #FFF;
+  border: 1px solid #fff;
+}
+
+.button2:hover{
+  background-color: #F5F5F5;
+}
+.button2:hover svg{
+  animation: bounce 2s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.msg-google{
+  color: #282828;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+  text-decoration:none;
 }

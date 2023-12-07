@@ -1,10 +1,7 @@
 .share{
-  -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  border-radius: 20px;
-  background-color: var(--bg);
-  color: var(--textColor);
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
   margin-bottom: 20px;
 }
 
@@ -15,42 +12,14 @@
 .top{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.left{
-  display: flex;
-  align-items: center;
-  flex: 3;
-}
-
-.icon{
+.container img{
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.container input{
-  border: none;
-  outline: none;
-  padding: 20px 10px;
-  background-color: transparent;
-  width: 60%;
-  color: var(--textColor);
-}
-
-.right{
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.file{
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 0px;
 }
 
 hr{
@@ -84,15 +53,64 @@ hr{
 }
 
 .item span{
-  font-size: 12px;
-  color: gray;
+  color: var(--Gray-2, #4F4F4F);
+font-feature-settings: 'clig' off, 'liga' off;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 16.8px */
 }
 
 .right-bottom button{
-  border: none;
-  padding: 5px;
-  color: white;
-  cursor: pointer;
-  background-color: #5271ff;
-  border-radius: 3px;
+  display: flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--02--Azul-secundrio, #025159);
+  color: var(--02--Azul-secundrio, #025159);
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 14.4px */
+  background-color: transparent;
 }
+
+.container input{
+  display: flex;
+  height: 8px;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 16px;
+  border: 0.75px solid var(--Gray-4, #BDBDBD);
+  background: #F2F2F2;
+}
+
+.icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.file{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+
+
+

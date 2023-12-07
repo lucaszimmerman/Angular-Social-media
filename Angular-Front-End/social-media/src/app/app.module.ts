@@ -26,6 +26,7 @@ import { RelationshipService } from './services/relationship.service/relationshi
 import { LikesService } from './services/likes.service/likes.service';
 import { UserService } from './services/user.service/user.service';
 import { UpdateComponent } from './components/update/update.component';
+import { PostPageComponent } from './pages/post-page/post-page.component';
 
 // Decorador NgModule para o módulo AppModule
 @NgModule({
@@ -42,7 +43,7 @@ import { UpdateComponent } from './components/update/update.component';
     PostsComponent, // Componente de posts
     PostComponent, // Componente de post individual
     CommentsComponent, // Componente de comentários
-    ShareComponent, UpdateComponent // Componente de compartilhamento
+    ShareComponent, UpdateComponent, PostPageComponent // Componente de compartilhamento
   ],
   imports: [
     FormsModule,

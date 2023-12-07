@@ -26,6 +26,16 @@ export class UsersController {
     }
   }
 
+  @Get()
+  async getUsers() {
+    try {
+      const users = await this.userService.getUsers()
+      return users
+    } catch (error) {
+      throw error
+    }
+  }
+
   @Put(':userId')
   async updateUser(
     @Param('userId') userId: number,

@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service/auth.service';
 import { UserService } from 'src/app/services/user.service/user.service';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-update',
@@ -22,7 +23,7 @@ export class UpdateComponent {
   texts: { [key: string]: string } = {};
   error: any;
 
-  constructor(private authService: AuthService,private http: HttpClient, private userService: UserService){
+  constructor(private authService: AuthService,private http: HttpClient, private userService: UserService, private location: Location){
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user; // Atualizando a variável currentUser com o usuário atual
       this.getUser(this.currentUser.id)
@@ -86,6 +87,9 @@ export class UpdateComponent {
         (data) => {
           // Atualize sua interface do usuário conforme necessário
           console.log(data);
+
+          // Recarregue a página após a atualização bem-sucedida
+          location.reload();
         },
         (error) => {
           console.error('Error updating user:', error);

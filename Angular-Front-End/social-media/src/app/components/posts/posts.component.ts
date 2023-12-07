@@ -50,4 +50,6 @@ export class PostsComponent {
     this.posts = this.posts.filter((post) => post.id !== deletedPostId);
   }
 
+
+
 }

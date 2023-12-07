@@ -36,7 +36,27 @@ export class UsersService {
   catch(error) {
     throw error // Propaga outros erros para o controlador lidar
   }
+  async getUsers(): Promise<User[]> {
+    try {
+      const users = await this.userRepository.find({
+        select: [
+          'id',
+          'username',
+          'email',
+          'name',
+          'coverPic',
+          'profilePic',
+          'city',
+          'website',
+          // Adicione outras propriedades necessárias aqui
+        ],
+      })
 
+      return users
+    } catch (error) {
+      throw error // Propaga outros erros para o controlador lidar
+    }
+  }
   async updateUser(userId: number, updateData: Partial<User>): Promise<User> {
     try {
       const user = await this.userRepository.findOne({ where: { id: userId } })

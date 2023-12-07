@@ -40,6 +40,8 @@ export class CadastroComponent {
 
         if (error.status === 409) {
           this.handleError('Usuário já existe. Escolha outro nome de usuário.');
+        } else if (error.status === 400) {
+          this.handleError('Todos os campos são obrigatórios');
         } else {
           this.handleError('Erro inesperado. Por favor, tente novamente mais tarde.');
         }

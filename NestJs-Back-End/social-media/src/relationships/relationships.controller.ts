@@ -27,6 +27,20 @@ export class RelationshipsController {
     }
   }
 
+  @Get('/suggested/:userId')
+  async getSuggestedUsers(@Param('userId') userId: number) {
+    try {
+      const suggestedUsers =
+        await this.relationshipsService.getSuggestedUsers(userId)
+      return suggestedUsers
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        return { error: 'Suggested users not found' }
+      }
+      throw error
+    }
+  }
+
   @Post()
   async addRelationship(
     @Body('followerUserId') followerUserId: number,

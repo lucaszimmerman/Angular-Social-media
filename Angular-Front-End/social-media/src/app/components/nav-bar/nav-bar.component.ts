@@ -1,12 +1,8 @@
 // Importando o módulo necessário do Angular e os ícones do Font Awesome
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faCircleQuestion, faGear, faHouse, faSignOutAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faGear, faSignOutAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import { faGrip } from '@fortawesome/free-solid-svg-icons';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 // Importando os serviços AuthService e DarkModeService
@@ -23,12 +19,7 @@ import { UserService } from 'src/app/services/user.service/user.service';
 // Exportando a classe NavBarComponent
 export class NavBarComponent {
   // Definindo os ícones do Font Awesome para a barra de navegação
-  homeIcon = faHouse;
   darkModeIcon = faMoon;
-  faGrip = faGrip;
-  notificationIcon = faBell;
-  messagesIcon = faEnvelope;
-  userIcon = faUser;
   searchIcon = faMagnifyingGlass;
   lightModeIcon = faSun;
   helpIcon = faCircleQuestion;

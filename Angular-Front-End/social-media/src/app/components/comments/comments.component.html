@@ -1,8 +1,7 @@
 <div class="comments">
   <div class="write">
     <img [src]="'assets/upload/' + currentUser?.profilePic" alt="Foto de perfil">
-    <input type="text" [placeholder]="'Escreva um Comentário ' + currentUser.name + '?' " [(ngModel)]="desc" />
-    <button (click)="handleClick($event)">Enviar</button>
+    <input type="text" [placeholder]="'Escreva um Comentário ' + currentUser.name + '?' " [(ngModel)]="desc" (keyup.enter)="handleClick($event)" />
   </div>
   <ng-container *ngIf="error; else commentsContent">
     <div class="error-message">
@@ -20,10 +19,10 @@
         <div class="comment" >
           <img [src]="'assets/upload/' + comment.user.profilePic" alt="Foto de perfil">
           <div class="info">
-            <span>{{ comment.user.name }}</span>
+            <span class="tit">{{ comment.user.name }}</span>
+            <span class="use">{{ '@' + comment.user.username + " - " + formatDateToNow(comment.createdAt) }}</span>
             <p>{{ comment.desc }}</p>
           </div>
-          <span class="date" *ngIf="comment.createdAt">{{ formatDateToNow(comment.createdAt) }}</span>
           <fa-icon (mousedown)="toggleSettingsOpen(comment)" id="configIcon" [icon]="settingsIcon"></fa-icon>
           <div class="settings" *ngIf="commentSettingsOpen[comment.id] && comment.canDelete">
           <div class="container">

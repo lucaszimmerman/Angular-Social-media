@@ -14,6 +14,10 @@ export class RelationshipService {
     return this.http.get<any[]>(`${this.apiUrl}/relationships/${followedUser}`)
   }
 
+  getSuggestedUsers(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/relationships/suggested/${userId}`);
+  }
+
   addRelationship(followerUserId: number, followedUserId: number): Observable<any> {
     const newRelationship = { followerUserId, followedUserId };
 

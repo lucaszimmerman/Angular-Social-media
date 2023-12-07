@@ -20,15 +20,13 @@
   display: flex;
 }
 
-.profile{
+.profile {
   flex: 6;
   background-color: var(--bgSoft);
 }
 
 
 .images {
-  width: 100%;
-  height: 300px;
   position: relative;
 }
 
@@ -36,41 +34,136 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 16px;
+  z-index: 1;
+  position: relative;
+}
+
+.capa {
+  height: 300px;
+  flex-shrink: 0;
+  padding: 40px 60px;
+}
+
+.perf {
+  display: flex;
+}
+
+.nome {
+  display: flex;
+  flex-direction: column;
+  margin-top: -24px;
+}
+
+.nm {
+  color: #333;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 24px */
+}
+
+.arro {
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 15.6px */
+  letter-spacing: -0.5px;
+}
+
+.imagperf {
+  border: 8px solid #F4F2EE;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  margin-top: -150px;
+  margin-left: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .profilePic {
-  width: 200px;
-  height: 200px;
+  width: 166px;
+  height: 166px;
   border-radius: 50%;
   object-fit: cover;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 200px;
+
+
 }
 
 .profileContainer {
-  padding: 20px 70px;
+  padding: 20px 60px;
+  display: flex;
+  gap: 40px;
 }
 
+.profileBox{
+display: flex;
+width: 551px;
+justify-content: space-between;
+align-items: center;
+}
 
+.followedit{
+  width: 33px;
+  height: 33px;
+  flex-shrink: 0;
+}
+
+.info{
+  flex-direction: column;
+  align-items: center;
+}
 
 .userInfo {
-  height: 180px;
-  -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-  border-radius: 20px;
-  background-color: var(--bg);
-  color: var(--textColor);
-  padding: 50px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  width: 280px;
+  height: 287px;
+  padding: 24px;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
 }
 
+.high {
+  padding-left: 4px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.tit {
+  color: #333;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+
+  border-top: 5px;
+  line-height: 120%;
+  /* 16.8px */
+}
+
+.txt {
+  overflow: hidden;
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 21px */
+  letter-spacing: -0.5px;
+}
 
 
 .left {
@@ -83,19 +176,7 @@
   color: var(--textColorSoft);
 }
 
-.center {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
 
-.center span {
-  font-size: 30px;
-  font-weight: 500;
-  white-space: nowrap;
-}
 
 .info {
   width: 100%;
@@ -111,8 +192,34 @@
   color: var(--textColorSoft);
 }
 
-.item span {
+.direito {
+  display: flex;
+  margin-top: 8px;
+}
+
+.super {
+  display: flex;
+  gap: 8px;
+}
+
+.int-text {
+  color: var(--06--Fundo-claro, #F6F6F6);
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 14.4px */
+}
+
+.block {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--05--Laranja-detalhes, #F28705);
 }
 
 button {
@@ -132,26 +239,28 @@ button {
   gap: 10px;
 }
 
-.posts{
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
 /* Para tablets */
 @media (min-width: 601px) and (max-width: 1024px) {
   .profileContainer {
     padding: 20px;
   }
-  .left{
+
+  .left {
     flex-wrap: wrap;
   }
+}
+
+.posts{
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 @media (max-width: 600px) {
   .profileContainer {
     padding: 10px;
   }
+
   .userInfo {
     flex-direction: column;
     height: 30vh;

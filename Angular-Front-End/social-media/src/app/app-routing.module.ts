@@ -8,6 +8,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AuthGuard } from './auth.guard'; // Importando o AuthGuard para proteger as rotas
+import { PostPageComponent } from './pages/post-page/post-page.component';
 
 // Definindo as rotas
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent }, // Rota para o componente de cadastro
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Rota vazia redireciona para a rota 'home'
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }, // Rota para o componente da página inicial, protegida pelo AuthGuard
-  { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] } // Rota para o componente de perfil, com parâmetro de ID e protegida pelo AuthGuard
+  { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] }, // Rota para o componente de perfil, com parâmetro de ID e protegida pelo AuthGuard
+  { path: 'post/:id', component: PostPageComponent, canActivate: [AuthGuard] }
 ];
 
 // Definindo o módulo de roteamento

@@ -1,15 +1,11 @@
-.comments{
-  position: relative;
-}
-
-.comments img{
+.comments img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.write{
+.write {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,56 +13,89 @@
   margin: 20px 0px;
 }
 
-.write input{
+.write input {
   flex: 5;
   padding: 10px;
-  border: 1px solid var(--border);
   background-color: transparent;
-  color: var(--textColor);
+  border-radius: 16px;
+  border: 0.75px solid var(--Gray-4, #BDBDBD);
 }
 
-.write button{
-  border: none;
-  background-color: #5271ff;
-  padding: 10px;
-  cursor: pointer;
-}
 
-.comment{
+
+.comment {
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.info{
-  flex: 5;
+.info {
+  border-radius: 16px;
+  background: #F2F2F2;
   display: flex;
+  padding: 8px 16px;
   flex-direction: column;
-  gap: 3px;
+  justify-content: center;
   align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
 }
 
-.info span{
- font-weight: 500;
+
+.tit {
+  align-self: stretch;
+  color: #333;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 16.8px */
+  letter-spacing: -0.5px;
 }
 
-.info p{
- color: var(--textColorSoft);
+
+.use{
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.4px */
+  letter-spacing: -0.5px;
 }
 
-.date{
+
+.info p {
+  overflow: hidden;
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 21px */
+  letter-spacing: -0.5px;
+}
+
+.date {
   flex: 1;
   align-self: center;
   color: grey;
   font-size: 12px;
 }
 
+#configIcon{
+  align-self: right;
+  color: grey;
+}
+
 .settings{
 position: absolute;
-top: 85px;
-right: 0;
-bottom: 0;
+right: 510px;
 z-index: 1; /* Garante que .settings fique sobreposto */
 display: inline-flex;
 padding: 24px 48px 24px 24px;

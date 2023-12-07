@@ -33,6 +33,18 @@ export class PostController {
       }
     }
   }
+  @Get('/single/:id')
+  async getPost(@Param('id') id: number) {
+    try {
+      const post = await this.postService.getPost(id)
+      return { post }
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        return { error: 'Post not found', status: 404 }
+      }
+      throw error
+    }
+  }
   @Post()
   async addPost(
     @Body('desc') desc: string,

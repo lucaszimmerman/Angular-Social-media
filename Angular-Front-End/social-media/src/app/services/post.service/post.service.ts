@@ -15,13 +15,12 @@ export class PostService {
   constructor(private http: HttpClient) {}
 
   getPosts(userId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/post/${userId}`).pipe(
-      tap(() => {
-      })
-    )}
+    return this.http.get<any[]>(`${this.apiUrl}/post/${userId}`)
+  }
 
-
-
+  getPost(postId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/post/single/${postId}`)
+  }
   // Método para notificar a criação de uma nova postagem
   notifyPostCreated() {
     this.postCreatedSubject.next();

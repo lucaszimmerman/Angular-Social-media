@@ -1,59 +1,155 @@
-.post{
-  -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-    border-radius: 20px;
-    background-color: var(--bg);
-    color: var(--textColor);
+.post {
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
 }
 
-.container{
+.content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  align-self: stretch;
+  overflow: hidden;
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 21px */
+
+}
+
+.container {
   padding: 20px;
 }
 
-.user{
+.user {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
-.userInfo{
- display: flex;
- gap: 20px;
+.userInfo {
+  display: flex;
+  gap: 20px;
 }
 
-.userInfo img{
- width: 40px;
- height: 40px;
- border-radius: 40px;
- object-fit: cover;
+.userInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  object-fit: cover;
 }
 
-
-.details{
+.details {
   display: flex;
   flex-direction: column;
 }
 
-.details  a {
+.details a {
   text-decoration: none;
-  color: inherit;
+  color: inherit
 }
 
-.details name{
-  font-weight: 50;
+.name {
+  color: #333;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 16.8px */
+  letter-spacing: -0.5px;
 }
 
-.details date{
+.date {
+  color: var(--Gray-2, #4F4F4F);
+  font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.4px */
+  letter-spacing: -0.5px;
+}
+
+.content {
+  margin: 8px 0px;
+}
+
+.content img {
+  width: 100%;
+  max-height: 2000px;
+  object-fit: cover;
+  margin-top: 8px;
+  border-radius: 8px;
+  background: #FFF;
+}
+
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.come {
+  display: flex;
+  margin-top: 16px;
+
+}
+
+.coe {
+  color: var(--Gray-3, #828282);
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 16.8px */
+  letter-spacing: -0.5px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reacao {
+  color: #828282;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  /* 19.2px */
+  letter-spacing: -0.5px;
+  margin-left: -8px;
+}
+
+.highlight {
+  background-color: #ffdab9; /* Cor de destaque dourada mais leve */
+  color: black; /* Cor do texto no destaque */
+  padding: 8px; /* Espaçamento interno */
+  border-radius: 10px; /* Borda arredondada */
+  margin-bottom: 10px; /* Espaço abaixo do selo de destaque */
+  display: inline-block; /* Torna o destaque uma caixa em linha */
+  font-size: 14px; /* Tamanho da fonte */
+  margin-right: 10px; /* Espaçamento à direita para evitar sobreposição */
 }
 
 
 .settings{
  position: absolute;
- top: 30px;
- right: 0;
+ right: 540px;
  z-index: 1; /* Garante que .settings fique sobreposto */
  display: inline-flex;
  padding: 24px 48px 24px 24px;
@@ -80,30 +176,35 @@
 }
 
 
-.content{
-  margin: 20px 0px;
-}
 
-.content img{
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  margin-top: 20px;
-}
-
-
-.info{
+.share{
+  position: absolute;
+  left: 720px;
   display: flex;
+  width: 100px;
+  padding: 20px 74px 20px 74px;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  gap: 20px;
-}
+  gap: 15.25px;
+  border-radius: 10px;
+  background: var(--bgSoft);
+ }
 
-.item{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+ .share span{
+  color: #000;
+  text-align: center;
   font-size: 14px;
-}
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+ }
+
+ .shareContainer{
+  display: flex;
+  align-items: center;
+  gap: 11.746px;
+  }
+
 
 

@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { User } from 'src/users/user.entity'
-import { Repository } from 'typeorm'
+import { In, Not, Repository } from 'typeorm'
 import { Relationship } from './relationships.entity'
 
 @Injectable()
@@ -32,6 +32,32 @@ export class RelationshipsService {
       return relationships.map((relationship) => relationship.followerUser.id)
     } catch (error) {
       throw new NotFoundException('Relationships not found')
+    }
+  }
+
+  async getSuggestedUsers(userId: number): Promise<User[]> {
+    try {
+      const relationships = await this.relationshipsRepository.find({
+        where: { followerUser: { id: userId } },
+        select: ['followedUser'],
+      })
+
+      if (!relationships || relationships.length === 0) {
+        // Retorna todos os usuários, exceto o usuário atual
+        return this.userRepository.find({ where: { id: Not(userId) } })
+      }
+
+      const followedUserIds = relationships.map(
+        (relationship) => relationship.followedUser.id,
+      )
+
+      const suggestedUsers = await this.userRepository.find({
+        where: { id: Not(In([userId, ...followedUserIds])) },
+      })
+
+      return suggestedUsers
+    } catch (error) {
+      throw new InternalServerErrorException('Failed to get suggested users')
     }
   }
 
